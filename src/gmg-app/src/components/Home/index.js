@@ -9,7 +9,7 @@ import GrillClient from '../../utils/GrillClient'
 import Alert from 'react-s-alert'
 import Connecting from './Connecting'
 import 'react-s-alert/dist/s-alert-default.css'
-import 'react-s-alert/dist/s-alert-css-effects/bouncyflip.css'
+import 'react-s-alert/dist/s-alert-css-effects/slide.css'
 import './index.css'
 import 'typeface-roboto'
 import { Chart } from 'react-chartjs-2'
@@ -51,7 +51,7 @@ export default class Home extends Component {
       grillConnected: false,
       socketConnected: false,
       showTimers: false,
-      showHistory: false
+      showHistory: true
     }
 
     // Setup Socket.IO
@@ -63,7 +63,7 @@ export default class Home extends Component {
   getAlertOptions = (overrides = {}) => {
     return {
       position: 'top-right',
-      effect: 'bouncyflip',
+      effect: 'slide',
       timeout: 'none',
       offset: 10,
       ...overrides
